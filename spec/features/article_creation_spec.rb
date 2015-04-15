@@ -7,7 +7,7 @@ RSpec.describe "User creates new article" do
       fill_in "article[title]", with: "New Article"
       fill_in "article[body]", with: "Body of new Article"
       save_and_open_page
-      click_button "Create New Article"
+      click_button "Publish"
       expect(page).to have_content("New Article")
       expect(page).to have_content("Body of new Article")
     end
@@ -16,7 +16,7 @@ RSpec.describe "User creates new article" do
     it "does not save the new article," do
       visit new_article_path
       fill_in "article[title]", with: "New Article1"
-      click_button "Create New Article"
+      click_button "Publish"
       expect(current_path).to be(new_article_path)
     end
   end
@@ -24,7 +24,7 @@ RSpec.describe "User creates new article" do
     it "does not save the new article," do
       visit new_article_path
       fill_in "article[body]", with: "Body of new Article1"
-      click_button "Create New Article"
+      click_button "Publish"
       expect(current_path).to be(new_article_path)
     end
   end
