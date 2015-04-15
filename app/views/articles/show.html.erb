@@ -4,7 +4,7 @@
   <p><%= @article.body %></p>
 
   <h3>Comments</h3>
-  <%= render partial: 'comment', collection: @article.comments %>
+  <%= render partial: 'comments/form', collection: @article.comments %>
 
   <%= link_to "<< Back to Articles list", articles_path %>
 
